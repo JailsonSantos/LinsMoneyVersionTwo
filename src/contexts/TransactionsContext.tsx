@@ -9,7 +9,6 @@ interface Transaction {
   createdAt: string;
 }
 
-
 interface TransactionContextType {
   transactions: Transaction[]
 }
@@ -40,4 +39,4 @@ export function TransactionsProvider({ children }: TransactionProviderProps) {
       {children}
     </TransactionsContext.Provider>
   )
-}
+} 
