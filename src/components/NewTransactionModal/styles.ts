@@ -2,12 +2,10 @@ import styled from "styled-components";
 import * as Dialog from '@radix-ui/react-dialog';
 
 export const Overlay = styled(Dialog.Overlay)`
-  position: fixed;
+  inset: 0;
   width: 100vw;
   height: 100vh;
-
-  inset: 0;
-
+  position: fixed;
   background: rgba(0, 0, 0, 0.75);
 `;
 
@@ -22,19 +20,18 @@ export const Content = styled(Dialog.Content)`
   left: 50%;
   transform: translate(-50%, -50%);
 
-  form{ 
-    margin-top: 2rem;
-
-    display: flex;
-    flex-direction: column;
+  form{     
     gap: 1rem;
+    display: flex;
+    margin-top: 2rem;
+    flex-direction: column;
 
     input{
-      border-radius: 6px;
       border: 0;
-      background-color: ${({ theme }) => theme["gray-900"]};
-      color: ${({ theme }) => theme["gray-300"]};
       padding: 1rem;
+      border-radius: 6px;
+      color: ${({ theme }) => theme["gray-300"]};
+      background-color: ${({ theme }) => theme["gray-900"]};
 
       &::placeholder{
         color: ${({ theme }) => theme["gray-500"]}
@@ -42,31 +39,59 @@ export const Content = styled(Dialog.Content)`
     }
 
     button[type="submit"]{
-      height: 58px;
       border: 0;
-      background-color: ${({ theme }) => theme["green-500"]};
-      color: ${({ theme }) => theme.white};
+      height: 58px;
+      cursor: pointer;
       font-weight: bold;
-      padding: 0 1.125rem;
       border-radius: 6px;
       margin-top: 1.5rem;
-      cursor: pointer;
+      padding: 0 1.125rem;
+      color: ${({ theme }) => theme.white};
+      background-color: ${({ theme }) => theme["green-500"]};
 
       &:hover{
-        background: ${({ theme }) => theme["green-700"]};
         transition: background-color 0.2s;
+        background: ${({ theme }) => theme["green-700"]};
       }
     }
   }
 `;
 
 export const CloseButton = styled(Dialog.Close)`
-  position: absolute;
-  background: transparent;
   border: 0;
   top: 1.5rem;
   right: 1.5rem;
   line-height: 0;
   cursor: pointer;
+  position: absolute;
+  background: transparent;
   color: ${({ theme }) => theme["gray-500"]};
+`;
+
+export const TransactionType = styled.div`
+  gap: 1rem;
+  display: grid;
+  margin-top: 0.5rem;
+  grid-template-columns: repeat(2, 1fr);
+`;
+
+
+interface TransactionTypeButtonProps {
+  variant: 'income' | 'outcome';
+}
+export const TransactionTypeButton = styled.button<TransactionTypeButtonProps>`
+  border: 0;
+  gap: 0.5rem;
+  padding: 1rem;
+  display: flex;
+  cursor: pointer;
+  border-radius: 6px;
+  align-items: center;
+  justify-content: center;
+  color: ${({ theme }) => theme["gray-300"]};
+  background-color: ${({ theme }) => theme["gray-700"]};
+
+  svg{
+    color: ${({ variant, theme }) => variant === 'income' ? theme["green-300"] : theme["red-300"]}
+  }
 `;
