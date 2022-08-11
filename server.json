@@ -23,6 +23,22 @@
       "category": "Vestuário",
       "price": 3550,
       "createdAt": "2022-07-10T19:09:19.900Z"
+    },
+    {
+      "description": "Desenvolvimento de Apps",
+      "price": 10000,
+      "category": "Venda",
+      "type": "income",
+      "createdAt": "2022-08-11T17:27:56.708Z",
+      "id": 4
+    },
+    {
+      "description": "Manutenção em sistema web",
+      "price": 5000,
+      "category": "Manutenção de produtos",
+      "type": "income",
+      "createdAt": "2022-08-11T17:41:40.792Z",
+      "id": 5
     }
   ]
 }
