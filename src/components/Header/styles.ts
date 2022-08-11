@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { mobile } from '../../styles/resposive'
 
 export const HeaderContainer = styled.header`
   padding: 2.5rem 0 7.5rem;
@@ -13,6 +14,8 @@ export const HeaderContent = styled.div`
   max-width: 1120px;
   align-items: center;
   justify-content: space-between;
+
+  ${mobile({ flexDirection: 'column' })};
 `
 
 export const NewTransactionButton = styled.button`
@@ -29,4 +32,6 @@ export const NewTransactionButton = styled.button`
     background: ${({ theme }) => theme['green-700']};
     transition: background-color 0.2s;
   }
+
+  ${mobile({ marginTop: '1rem' })};
 `

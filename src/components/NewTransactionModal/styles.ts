@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import * as Dialog from '@radix-ui/react-dialog'
 import * as RadioGroup from '@radix-ui/react-radio-group'
+import { mobile } from '../../styles/resposive'
 
 export const Overlay = styled(Dialog.Overlay)`
   inset: 0;
@@ -15,6 +16,8 @@ export const Content = styled(Dialog.Content)`
   border-radius: 6px;
   padding: 2.5rem 3rem;
   background-color: ${({ theme }) => theme['gray-800']};
+
+  ${mobile({ minWidth: '95%', padding: '1rem' })};
 
   position: fixed;
   top: 50%;

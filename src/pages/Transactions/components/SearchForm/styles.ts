@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { mobile } from '../../../../styles/resposive'
 
 export const SearchFormContainer = styled.form`
   display: flex;
@@ -15,6 +16,8 @@ export const SearchFormContainer = styled.form`
     &::placeholder {
       color: ${({ theme }) => theme['gray-500']};
     }
+
+    ${mobile({ width: '100px' })};
   }
 
   button {

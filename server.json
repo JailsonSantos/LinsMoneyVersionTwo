@@ -39,6 +39,30 @@
       "type": "income",
       "createdAt": "2022-08-11T17:41:40.792Z",
       "id": 5
+    },
+    {
+      "description": "aluguel",
+      "price": 10000,
+      "category": "Moradia",
+      "type": "outcome",
+      "createdAt": "2022-08-11T20:17:01.721Z",
+      "id": 6
+    },
+    {
+      "description": "Shoping",
+      "price": 16000,
+      "category": "Carro",
+      "type": "outcome",
+      "createdAt": "2022-08-11T20:20:28.091Z",
+      "id": 7
+    },
+    {
+      "description": "Tecido de seda",
+      "price": 6000,
+      "category": "vestuário",
+      "type": "income",
+      "createdAt": "2022-08-11T20:42:08.551Z",
+      "id": 8
     }
   ]
 }

@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components'
+import { mobile } from '../../styles/resposive'
 
 export const SummaryContainer = styled.section`
   gap: 2rem;
@@ -9,10 +10,12 @@ export const SummaryContainer = styled.section`
   margin-top: -5rem;
   max-width: 1120px;
   grid-template-columns: repeat(3, 1fr);
+
+  ${mobile({ display: 'flex', flexDirection: 'column' })};
 `
 
 interface SummaryCardProps {
-  variant?: 'green'
+  variant?: 'green' | 'red'
 }
 
 export const SummaryCard = styled.div<SummaryCardProps>`
@@ -34,8 +37,15 @@ export const SummaryCard = styled.div<SummaryCardProps>`
   }
 
   ${({ variant }) =>
-    variant === 'green' &&
-    css`
-      background: ${({ theme }) => theme['green-700']};
-    `}
+    variant === 'green'
+      ? css`
+          background: ${({ theme }) => theme['green-500']};
+        `
+      : variant === 'red'
+      ? css`
+          background: ${({ theme }) => theme['red-500']};
+        `
+      : css`
+          background: ${({ theme }) => theme['gray-700']};
+        `}
 `
