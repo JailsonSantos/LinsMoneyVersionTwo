@@ -34,7 +34,7 @@ export function TransactionsProvider({ children }: TransactionProviderProps) {
   const [transactions, setTransactions] = useState<Transaction[]>([])
 
   const fetchTransactions = useCallback(async (query?: string) => {
-    const response = await api.get('/transactions', {
+    const response = await api.get('transactions', {
       params: {
         _sort: 'createdAt',
         order: 'desc',
@@ -63,7 +63,7 @@ export function TransactionsProvider({ children }: TransactionProviderProps) {
   )
   useEffect(() => {
     fetchTransactions()
-  }, [])
+  }, [fetchTransactions])
 
   return (
     <TransactionsContext.Provider
