@@ -43,10 +43,10 @@ export const SummaryCard = styled.div<SummaryCardProps>`
           background: ${({ theme }) => theme['green-500']};
         `
       : variant === 'red'
-        ? css`
+      ? css`
           background: ${({ theme }) => theme['red-500']};
         `
-        : css`
+      : css`
           background: ${({ theme }) => theme['gray-700']};
         `}
 `
